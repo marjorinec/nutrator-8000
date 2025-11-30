@@ -1,4 +1,6 @@
 from django.db import models
+from django.db.models.functions import Lower
+
 
 class FoodType(models.Model):
     MEASURE_UNIT_CHOICES = (
@@ -107,3 +109,5 @@ class Meta:
                 name='unique_desc_brand_weight'
             )
         ]
+
+        
