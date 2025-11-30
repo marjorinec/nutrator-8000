@@ -69,3 +69,5 @@ class FoodTypeAdmin(admin.ModelAdmin):
     rich_in_display.short_description = "Rico em"
 
     list_display = ('description', 'brand_name', 'portion_size', 'measure_unit')
+    # list_filter = ('description', 'brand_name', 'portion_size', 'measure_unit')
+    list_filter = ('description', 'brand_name', 'portion_size', 'measure_unit', 'kcal', 'total_carbs', 'protein', 'total_fat')

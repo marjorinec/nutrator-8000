@@ -45,5 +45,6 @@ class FoodAdmin(admin.ModelAdmin):
     total_fat_display.short_description = "Gordura"
 
     list_display = ('food_name', 'weight', 'kcal', 'total_carbs', 'protein', 'total_fat')
+    list_filter = ('food_name', 'weight', 'kcal', 'total_carbs', 'protein', 'total_fat')
 
     
