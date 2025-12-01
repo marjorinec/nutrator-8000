@@ -9,10 +9,10 @@ class LoggedMealAdmin(admin.ModelAdmin):
     )
 
     fields = (
-        'food',
+        'logged_food',
         'meal_type',
         'model_meal_type_component',
     )
 
-    list_display = ('food', 'meal_type', 'model_meal_type_component', 'logged_at')
-    list_filter = ('food', 'meal_type', 'model_meal_type_component', 'logged_at')
+    list_display = ('logged_food', 'meal_type', 'model_meal_type_component', 'logged_at')
+    list_filter = ('logged_food', 'meal_type', 'model_meal_type_component', 'logged_at')

@@ -6,7 +6,7 @@ from .models import ModelMealTypeComponent
 class ModelMealTypeComponentAdmin(admin.ModelAdmin):
     readonly_fields = ('meal_calorie_budget',)
     fields = ('food_type_id', 'weight', 'meal_type_nutritional_plan')
-    list_display = ('food_type_id', 'weight', 'meal_type_nutritional_plan', 'meal_calorie_budget')
+    list_display = ('food_type_id', 'weight', 'meal_type_nutritional_plan')
     list_filter = ('meal_type_nutritional_plan',)
 
 

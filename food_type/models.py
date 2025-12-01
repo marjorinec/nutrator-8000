@@ -67,18 +67,17 @@ class FoodType(models.Model):
         super().save(*args, **kwargs)
 
     def __str__(self):
-        return f"{self.description} — {self.brand_name}"
+        return f"{self.description}{f' — {self.brand_name}' if self.brand_name else ''}"
 
     description = models.CharField(max_length=100)
     brand_name = models.CharField(max_length=100, blank=True, null=True)
     portion_size = models.IntegerField()
     measure_unit = models.CharField(choices=MEASURE_UNIT_CHOICES)
     snack = models.BooleanField(default=False)
-    kcal = models.IntegerField()
+    kcal = models.FloatField()
     total_carbs = models.FloatField()
     protein = models.FloatField()
     total_fat = models.FloatField()
-    container_total_weight = models.IntegerField()
 
     kcal_per_un = models.FloatField(null=True, blank=True, editable=False)
     total_carbs_per_un = models.FloatField(null=True, blank=True, editable=False)
@@ -86,6 +85,8 @@ class FoodType(models.Model):
     protein_per_un = models.FloatField(null=True, blank=True, editable=False)
     rich_in = models.JSONField(null=True, blank=True, editable=False)
 
+    container_total_weight = models.IntegerField(null=True, blank=True)
+    fiber = models.FloatField(blank=True, null=True)
     saturated_fat = models.FloatField(blank=True, null=True)
     polyunsaturated_fat = models.FloatField(blank=True, null=True)
     monounsaturated_fat = models.FloatField(blank=True, null=True)
@@ -93,7 +94,6 @@ class FoodType(models.Model):
     cholesterol = models.FloatField(blank=True, null=True)
     sodium = models.FloatField(blank=True, null=True)
     potassium = models.FloatField(blank=True, null=True)
-    fiber = models.FloatField(blank=True, null=True)
     sugar = models.FloatField(blank=True, null=True)
     added_sugar = models.FloatField(blank=True, null=True)
     vitamin_a = models.FloatField(blank=True, null=True)

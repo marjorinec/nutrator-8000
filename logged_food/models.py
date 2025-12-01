@@ -25,7 +25,7 @@ class LoggedFood(models.Model):
         return round(self.weight * self.food_type.total_fat_per_un, 1)
 
     def get_food_name(self):
-        return f"{self.food_type.description} - {self.food_type.brand_name}"
+        return f"{self.food_type.description}{f' — {self.food_type.brand_name}' if self.food_type.brand_name else ''}"
 
     def __str__(self):
         return f"{self.get_food_name()}"
