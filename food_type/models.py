@@ -78,7 +78,7 @@ class FoodType(models.Model):
     total_carbs = models.FloatField()
     protein = models.FloatField()
     total_fat = models.FloatField()
-    container_total_weight = models.IntegerField(null=True, blank=True)
+    container_total_weight = models.IntegerField()
 
     kcal_per_un = models.FloatField(null=True, blank=True, editable=False)
     total_carbs_per_un = models.FloatField(null=True, blank=True, editable=False)
@@ -106,7 +106,7 @@ class Meta:
         constraints = [
             models.UniqueConstraint(
                 fields=['description', 'brand_name', 'container_total_weight'],
-                name='unique_desc_brand_weight'
+                name='unique_desc_brand_container_weight'
             )
         ]
 

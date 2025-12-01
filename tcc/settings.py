@@ -37,14 +37,18 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'user',
+    'food_preference',
     'food_type',
-    'food',
+    'logged_food',
+    'logged_meal',
+    'meal_type',
+    'meal_type_nutritional_plan',
+    'model_meal_type_component',
     'nutritional_goal',
     'nutritional_plan',
-    'meal_type',
-    'meal',
-    'model_meal_type'
+    'patient',
+    'planned_food',
+    'planned_meal',
 ]
 
 MIDDLEWARE = [
